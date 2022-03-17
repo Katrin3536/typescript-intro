@@ -5,11 +5,9 @@ type OnOff = {
     onClick: (nameButton: string) => void
 }
 const OnOff = (props: OnOff) => {
-    console.log(props);
+
     const styleButtonOn = {backgroundColor: props.turnOn ? 'green' : ''};
     const styleButtonOff = {backgroundColor: props.turnOn ? '' : 'red'};
-    console.log(styleButtonOn);
-    console.log(styleButtonOff);
     const roundButton = {
         borderRadius: ' 50px',
         backgroundColor: props.turnOn ? 'green' : 'red'
