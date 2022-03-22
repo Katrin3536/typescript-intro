@@ -20,8 +20,6 @@ const OnOff = (props: OnOff) => {
             <button style={roundButton}>S</button>
         </div>
     );
-
-
 };
 
 export default OnOff;

@@ -4,29 +4,25 @@ import Accordion from './components/Accordion/Accordion';
 import {Rating, RatingValueType} from './components/Rating/Rating';
 // @ts-ignore
 import OnOff from './components/OnOff/OnOff';
-import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
-import { UncontrolledRating } from './components/Rating/UncontrolledRating';
-import UncontrolledOnOff from './components/OnOff/UncontrolledOnOff';
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
+import { UncontrolledRating } from './components/UncontrolledRating/UncontrolledRating';
+import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
 
 
 function App() {
     // console.log('App rendering');
 
-    let [value, setValue] = useState(false);
-
+    let [value, setValue] = useState<boolean>(false);
 
     const onClick = (nameButton: string) => {
         setValue(nameButton === 'ON');
     };
 
-
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [collapsedValue, setCollapsedValue] = useState<boolean>(false)
 
-
     return (
         <div>
-
             <UncontrolledAccordion titleValue={'Menu'}/>
             <UncontrolledAccordion titleValue={'Users'}/>
 
@@ -43,7 +39,7 @@ function App() {
             <UncontrolledRating/>
 
             <OnOff turnOn={value} onClick={onClick}/>
-            <UncontrolledOnOff/>
+            <UncontrolledOnOff onChange = {setValue}/> {value.toString()}
 
         </div>
     );
